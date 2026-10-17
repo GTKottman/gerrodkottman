@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gerrod Kottman</title>
+<meta name="description" content="Gerrod Kottman builds open-source studios, Blender tools, audio plugins, games and websites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0e10;
+    --ink: #ecebe6;
+    --muted: #9a9890;
+    --rule: #26262a;
+    --accent: #ff7a3d;
+    --link: #8ab4ff;
+    --edge: max(24px, calc((100vw - 1120px) / 2));
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.55 "Inter Tight", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link); text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+
+  header, section, footer { padding-inline: var(--edge); }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-block: 28px; font-size: 15px;
+  }
+  nav .name { font-weight: 600; letter-spacing: .02em; color: var(--ink); text-decoration: none; }
+  nav ul { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+  nav ul a { color: var(--muted); text-decoration: none; }
+  nav ul a:hover { color: var(--ink); }
+
+  .hero { padding-block: 96px 112px; border-bottom: 1px solid var(--rule); }
+  .hero h1 {
+    font: 400 clamp(48px, 8vw, 104px)/0.98 "Instrument Serif", serif;
+    margin: 0 0 32px; letter-spacing: -.01em;
+  }
+  .hero h1 em { color: var(--accent); }
+  .hero p { max-width: 58ch; color: var(--muted); font-size: 20px; margin: 0; }
+
+  .group { padding-block: 72px 24px; }
+  .group > h2 {
+    font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 8px;
+  }
+
+  .project {
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center;
+    padding-block: 40px; border-top: 1px solid var(--rule);
+  }
+  .project.text { grid-template-columns: 1fr; }
+  .project img {
+    width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top;
+    display: block; border-radius: 6px;
+  }
+  .project h3 {
+    font: 400 40px/1.05 "Instrument Serif", serif; margin: 0 0 12px;
+  }
+  .project p { margin: 0 0 16px; max-width: 60ch; }
+  .project .meta { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+  .project .links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 15px; }
+
+  footer {
+    padding-block: 80px; margin-top: 48px; border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  footer h2 { font: 400 40px/1.1 "Instrument Serif", serif; margin: 0; }
+  footer .links { display: flex; gap: 24px; align-items: end; font-size: 16px; }
+
+  @media (max-width: 760px) {
+    :root { --edge: 16px; }
+    nav ul { display: none; }
+    .hero { padding-block: 56px 72px; }
+    .project { grid-template-columns: 1fr; gap: 20px; }
+    .project h3 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="name" href="#">Gerrod Kottman</a>
+    <ul>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#audio">Music &amp; audio</a></li>
+      <li><a href="#blender">Blender</a></li>
+      <li><a href="#games">Games</a></li>
+      <li><a href="#sites">Websites</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="hero">
+    <h1>I build the tools,<br>then make <em>the work</em>.</h1>
+    <p>Open-source creative studios, Blender add-ons, audio plugins, a game and websites. Most of it runs on your own machine, and most of it is public on GitHub.</p>
+  </div>
+</header>
+
+<main>
+  <section class="group" id="video">
+    <h2>Video &amp; motion</h2>
+
+    <article class="project">
+      <img src="img/mortiflix.jpg" alt="Mortiflix homepage: Brief to final. Your call at every stage.">
+      <div>
+        <h3>Mortiflix</h3>
+        <div class="meta">Open-source motion design studio · AGPL-3.0</div>
+        <p>A video studio that runs on your own machine. Claude makes the video step by step (brief, script, style frames, animatic, music, final) and you approve every stage before the next one starts.</p>
+        <div class="links">
+          <a href="https://mortiflix.com">mortiflix.com</a>
+          <a href="https://github.com/GTKottman/mortiflix-oss">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <img src="img/transitions.jpg" alt="Liquid fill transition frame in orange and white">
+      <div>
+        <h3>Remotion Transitions</h3>
+        <div class="meta">Open library · MIT</div>
+        <p>50 motion-design transitions for Remotion, sorted by a taxonomy, with a submission protocol and a catalog for sites. Every new colour arrives through something on screen, never a bare swap.</p>
+        <div class="links">
+          <a href="https://github.com/GTKottman/remotion-transitions">GitHub</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="group" id="audio">
+    <h2>Music &amp; audio</h2>
+
+    <article class="project">
+      <img src="img/strata.jpg" alt="Strata plugin site: Mastering in layers">
+      <div>
+        <h3>Strata</h3>
+        <div class="meta">Mastering plugin · VST3 / CLAP · GPL-3.0</div>
+        <p>Mastering built like adjustment layers: Tone, Glue, Warmth and Width with a true-peak limiter and loudness meters. An Engine on the master and a Cylinder on every channel balance the whole mix through the song.</p>
+        <div class="links">
+          <a href="https://gtkottman.github.io/strata/">Site</a>
+          <a href="https://github.com/GTKottman/strata">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project text">
+      <div>
+        <h3>Mortiflix Music</h3>
+        <div class="meta">Open-source music studio · AGPL-3.0</div>
+        <p>The music sister of Mortiflix. Claude writes the music as MIDI step by step, you approve every stage, and you take MIDI packs into your own DAW.</p>
+        <div class="links">
+          <a href="https://github.com/GTKottman/mortiflix-music-oss">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project text">
+      <div>
+        <h3>Mortiflix Singer</h3>
+        <div class="meta">Singing-voice synthesizer · Windows, macOS, Linux · VST3 / CLAP / AU</div>
+        <p>Notes and lyrics in, a human-sounding vocal out. Record and train your own voice in the Booth, tune it, and use it from your DAW through the plugin.</p>
+        <div class="links">
+          <a href="https://github.com/GTKottman/mortiflix-singer">GitHub</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="group" id="blender">
+    <h2>Blender</h2>
+
+    <article class="project">
+      <img src="img/moblend.jpg" alt="MoBlend render: MoText letters over a wall of cloned cubes">
+      <div>
+        <h3>MoBlend</h3>
+        <div class="meta">Blender 5 add-on · GPL-3.0</div>
+        <p>Cinema 4D-style MoGraph for Blender: cloners, effectors, fields, MoText and fracture, built on Geometry Nodes, with an MCP server so AI agents can drive it too.</p>
+        <div class="links">
+          <a href="https://github.com/GTKottman/moblend">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <img src="img/nova.jpg" alt="Nova FX render: fireworks over a lake">
+      <div>
+        <h3>Nova FX</h3>
+        <div class="meta">Blender FX engine · GPL-3.0</div>
+        <p>An optimization-first particle, fire and fireworks engine with a C/OpenMP core, sparse Navier-Stokes fire, GPU solver and ready presets.</p>
+        <div class="links">
+          <a href="https://github.com/GTKottman/nova-fx">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project text">
+      <div>
+        <h3>Blender Multiplayer</h3>
+        <div class="meta">Setup kit · Tailscale</div>
+        <p>Live Blender co-editing over Tailscale with the Multi-User add-on: a pinned installer, setup, a sync test and the design.</p>
+        <div class="links">
+          <a href="https://github.com/GTKottman/blender-multiplayer">GitHub</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="group" id="games">
+    <h2>Games</h2>
+
+    <article class="project text">
+      <div>
+        <h3>Hollowell</h3>
+        <div class="meta">Godot · in development</div>
+        <p>A bottling tycoon game. Every chapter is a new town with its own sourcing, selling and breakdowns, repaired by hand at first and later by the staff you hire.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="group" id="sites">
+    <h2>Websites</h2>
+
+    <article class="project">
+      <img src="img/plagueboard.jpg" alt="Plagueboard homepage: From a Siberian lab to a leak about 40 dead">
+      <div>
+        <h3>Plagueboard</h3>
+        <div class="meta">Research tracker</div>
+        <p>A step-by-step timeline of the Irkutsk "pneumonic plague" scare, built from Chinese, Russian, Taiwan, US and WHO sources, with a follow-the-money view and a red-string board.</p>
+        <div class="links">
+          <a href="https://plagueboard.com">plagueboard.com</a>
+          <a href="https://github.com/GTKottman/plagueboard">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <img src="img/kottman.jpg" alt="Kottman Consulting homepage: AI-forward consulting that grows your business">
+      <div>
+        <h3>Kottman Consulting</h3>
+        <div class="meta">Business site</div>
+        <p>AI-forward business consulting, marketing and brand development. Self-hosted site and mail on my own server.</p>
+        <div class="links">
+          <a href="https://kottmanconsulting.com">kottmanconsulting.com</a>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer id="contact">
+  <h2>Let's make something.</h2>
+  <div class="links">
+    <a href="mailto:hello@kottmanconsulting.com">hello@kottmanconsulting.com</a>
+    <a href="https://github.com/GTKottman">GitHub</a>
+  </div>
+</footer>
+
+</body>
+</html>
