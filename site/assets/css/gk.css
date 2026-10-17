@@ -1,0 +1,41 @@
+/* gerrodkottman.com overrides on top of the Davies template */
+.gk-logo {
+  display: inline-block;
+  font-family: "Figtree", sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: var(--primary);
+}
+
+/* Hero: fit the content instead of a fixed 900px tall block */
+.section-hero-v1 {
+  min-height: 0 !important;
+  padding-top: 170px;
+}
+.section-hero-v1 .col-left .tf-list {
+  margin-bottom: 96px;
+}
+.section-hero-v1 .col-right .top {
+  margin-bottom: 120px;
+}
+@media (max-width: 767px) {
+  .section-hero-v1 {
+    padding-top: 130px;
+  }
+  .section-hero-v1 .col-left .tf-list {
+    margin-bottom: 64px;
+  }
+  .section-hero-v1 .col-right .top {
+    margin-bottom: 32px;
+  }
+}
+
+/* Selected works: Blender loops in place of the template's images */
+.section-selected-work .slick-for .image video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 860 / 644;
+  object-fit: cover;
+}
