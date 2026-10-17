@@ -23,23 +23,30 @@
   });
   if (!desktop) return;
 
-  var target = 0, shown = 0;
-  window.addEventListener("mousemove", function (e) {
-    target = Math.min(1, Math.max(0, e.clientY / window.innerHeight));
-  }, { passive: true });
+  var target = 0, shown = 0, running = false;
 
   function onScreen(v) {
     var r = v.getBoundingClientRect();
     return r.bottom > 0 && r.top < window.innerHeight && r.width > 0;
   }
 
-  (function tick() {
-    shown += (target - shown) * 0.12;              // eased follow, so the scrub glides instead of snapping
+  function seekAll() {
     videos.forEach(function (v) {
       if (!v.duration || v.seeking || !onScreen(v)) return;
       var t = shown * (v.duration - 0.05);
       if (Math.abs(v.currentTime - t) > 0.01) v.currentTime = t;
     });
-    requestAnimationFrame(tick);
-  })();
+  }
+
+  function tick() {
+    shown += (target - shown) * 0.12;              // eased follow, so the scrub glides instead of snapping
+    seekAll();
+    if (Math.abs(target - shown) > 0.001) requestAnimationFrame(tick);
+    else { shown = target; seekAll(); running = false; }
+  }
+
+  window.addEventListener("mousemove", function (e) {
+    target = Math.min(1, Math.max(0, e.clientY / window.innerHeight));
+    if (!running) { running = true; requestAnimationFrame(tick); }
+  }, { passive: true });
 })();
